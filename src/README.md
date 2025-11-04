@@ -127,4 +127,6 @@ A la classe principal s’ha de fer un menú amb les següents opcions:
 
 ## Desplegament
 
+No aplicable
+
 ## 🤝Contribucions
