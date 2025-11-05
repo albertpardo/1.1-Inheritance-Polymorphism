@@ -1,19 +1,24 @@
 package level3ex1;
 
+import java.util.ArrayList;
+
 public class Writer {
-    String name;
-    String dni;
-    static double salary;
+    private final String name;
+    private final String dni;
+    private static double salary;
+    private final ArrayList<News> newsArrayList= new ArrayList<>();
 
     public Writer(String name, String dni){
         this.name = name;
         this.dni = dni;
         salary = 1500;
-        // TODO definir lista de objetos news. Mirar Collections, List, Set
     }
 
     public String getName(){
         return name;
+    }
+    public void addNews(News news){
+        newsArrayList.add(news);
     }
 
     @Override

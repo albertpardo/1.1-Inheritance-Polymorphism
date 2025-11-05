@@ -20,7 +20,7 @@ public class MenuOptionsMethods {
             System.out.println(" - Id:" + i + "\tNAME: " + writers.get(i).getName());
         }
    }
-    public void addWriter( ArrayList<Writer> writers) {
+    public void addWriter(ArrayList<Writer> writers) {
         String name = "";
         String dni = "";
         Scanner scanner = new Scanner(System.in);
@@ -37,14 +37,14 @@ public class MenuOptionsMethods {
         printWritersInfo(writers);
     }
 
-    public void deleteWriter( ArrayList<Writer> writers) {
+    public void deleteWriter(ArrayList<Writer> writers) {
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
         int writerId;
         String name;
 
         printWritersName(writers);
-        System.out.print("\nPut the Id associated to Writer's name: ");
+        System.out.print("\nTo delete, put the Id associated to Writer's name: ");
         input1 = scanner.next();
         input2 = scanner.nextLine();
         if (input2.isEmpty() && input1.matches("^\\d+$")){
@@ -61,7 +61,7 @@ public class MenuOptionsMethods {
             System.out.println("\nInput Error!!!");
     }
 
-    public void assignNewsToWriter( ArrayList<Writer> writers) {
+    public void assignNewsToWriter(ArrayList<Writer> writers) {
         System.out.println("TODO assignNewsToWriter!!!");
     }
 
@@ -69,15 +69,15 @@ public class MenuOptionsMethods {
         System.out.println("TODO deleteNews!!!");
     }
 
-    public void showNewsByWriter( ArrayList<Writer> writers) {
+    public void showNewsByWriter(ArrayList<Writer> writers) {
         System.out.println("TODO showNewsByWriter!!!");
     }
 
-    public void calculateScoreNews( ArrayList<Writer> writers) {
+    public void calculateScoreNews(ArrayList<Writer> writers) {
         System.out.println("TODO calculateScoreNews!!!");
     }
 
-    public void calculateNewsPrice( ArrayList<Writer> writers) {
+    public void calculateNewsPrice(ArrayList<Writer> writers) {
         System.out.println("TODO calculateScoreNews!!!");
     }
 
