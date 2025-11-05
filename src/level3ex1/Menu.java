@@ -1,5 +1,6 @@
 package level3ex1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -33,30 +34,30 @@ public class Menu {
         return option;
     }
 
-     private static void executeOption(int option) {
+     private static void executeOption(int option, ArrayList<Writer> writers) {
         MenuOptionsMethods menuOptionsMethods = new MenuOptionsMethods();
 
         switch (option) {
             case 1:
-                menuOptionsMethods.addWriter();
+                menuOptionsMethods.addWriter(writers);
                 break;
             case 2:
-                menuOptionsMethods.deleteWriter();
+                menuOptionsMethods.deleteWriter(writers);
                 break;
             case 3:
-                menuOptionsMethods.assignNewsToWriter();
+                menuOptionsMethods.assignNewsToWriter(writers);
                 break;
             case 4:
-                menuOptionsMethods.deleteNews();
+                menuOptionsMethods.deleteNews(writers);
                 break;
             case 5:
-                menuOptionsMethods.showNewsByWriter();
+                menuOptionsMethods.showNewsByWriter(writers);
                 break;
             case 6:
-                menuOptionsMethods.calculateScoreNews();
+                menuOptionsMethods.calculateScoreNews(writers);
                 break;
             case 7:
-                menuOptionsMethods.calculateNewsPrice();
+                menuOptionsMethods.calculateNewsPrice(writers);
                 break;
         }
     }
@@ -64,12 +65,13 @@ public class Menu {
     public void start(){
         int option = 0;
         boolean exit = false;
+        ArrayList<Writer> writers = new ArrayList<>();
 
         while (!exit){
             printMenu();
             option = getOption();
             if (option != 8)
-                executeOption(option);
+                executeOption(option, writers);
             else
                 exit = true;
             System.out.println();
