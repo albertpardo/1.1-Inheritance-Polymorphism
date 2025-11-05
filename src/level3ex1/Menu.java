@@ -1,9 +1,8 @@
 package level3ex1;
 
-// import java.util.Scanner;
+import java.util.Scanner;
 
-public class Main {
-    /*
+public class Menu {
     private static void printMenu(){
         System.out.println("Main Menu :");
         System.out.println("1.- Add Writer");
@@ -32,7 +31,7 @@ public class Main {
         return option;
     }
 
-// Start: optiona Methods
+    // Start: optiona Methods
     private static void addWriter() {
         System.out.println("TODO addWriter!!!");
     }
@@ -90,7 +89,7 @@ public class Main {
         }
     }
 
-    private static void menu(){
+    public void start(){
         int option = 0;
         boolean exit = false;
 
@@ -103,14 +102,5 @@ public class Main {
                 exit = true;
             System.out.println();
         }
-    }
-
-     */
-
-    public static void main(String[] args){
-        //menu();
-        Menu menu = new Menu();
-
-        menu.start();
     }
 }
