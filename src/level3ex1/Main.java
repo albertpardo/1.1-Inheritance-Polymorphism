@@ -14,14 +14,39 @@ public class Main {
         System.out.println("7.- Calculate the news' price");
         System.out.println("8.- EXIT");
     }
-    static void menu(){
+
+    static int getOption(){
         Scanner scanner = new Scanner(System.in);
-        boolean exit = false;
-        int option = 0;
         String readLine = "";
+        int option = 0;
+
+        System.out.print("\nChoose option: ");
+        readLine = scanner.nextLine();
+        if (readLine.length() != 1)
+            System.out.println("\nBad option!!");
+        else {
+            if (readLine.charAt(0) >'0' & readLine.charAt(0) <'9')
+                option = Integer.parseInt(readLine);
+            else
+                System.out.println("\nBad option!!");
+        }
+        return option;
+    }
+
+    static void menu(){
+        int option = 0;
+        boolean exit = false;
+        /*
+        Scanner scanner = new Scanner(System.in);
+        String readLine = "";
+        */
 
         while (!exit){
             printMenu();
+            option = getOption();
+            if (option == 8)
+                exit = true;
+           /*
             System.out.print("\nChoose option: ");
             readLine = scanner.nextLine();
             if (readLine.length() != 1){
@@ -39,6 +64,7 @@ public class Main {
                     option = 0;
                 }
             }
+            */
 
 
             System.out.println();
