@@ -22,51 +22,24 @@ public class Main {
 
         System.out.print("\nChoose option: ");
         readLine = scanner.nextLine();
-        if (readLine.length() != 1)
+        if (readLine.length() == 1 & (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'))
+            option = Integer.parseInt(readLine);
+        else
             System.out.println("\nBad option!!");
-        else {
-            if (readLine.charAt(0) >'0' & readLine.charAt(0) <'9')
-                option = Integer.parseInt(readLine);
-            else
-                System.out.println("\nBad option!!");
-        }
         return option;
     }
 
     static void menu(){
         int option = 0;
         boolean exit = false;
-        /*
-        Scanner scanner = new Scanner(System.in);
-        String readLine = "";
-        */
 
         while (!exit){
             printMenu();
             option = getOption();
-            if (option == 8)
+            if (option != 8)
+                System.out.println("TODO ejecutar option!!!");
+            else
                 exit = true;
-           /*
-            System.out.print("\nChoose option: ");
-            readLine = scanner.nextLine();
-            if (readLine.length() != 1){
-                System.out.println("\nBad option!!");
-                option = 0;
-            }
-            else {
-                if (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'){
-                    option = Integer.parseInt(readLine);
-                    if (option == 8)
-                        exit = true;
-                }
-                else {
-                    System.out.println("\nBad option!!");
-                    option = 0;
-                }
-            }
-            */
-
-
             System.out.println();
         }
     }
