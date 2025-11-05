@@ -3,6 +3,7 @@ package level3ex1;
 import java.util.Scanner;
 
 public class Menu {
+
     private static void printMenu(){
         System.out.println("Main Menu :");
         System.out.println("1.- Add Writer");
@@ -22,7 +23,8 @@ public class Menu {
 
         System.out.print("\nChoose option: ");
         readLine = scanner.nextLine();
-        if (readLine.length() == 1 & (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'))
+        //if (readLine.length() == 1 & (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'))
+        if (readLine.matches("[1-8]"))
             option = Integer.parseInt(readLine);
         else {
             System.out.println("\nBad option!!");
@@ -31,61 +33,31 @@ public class Menu {
         return option;
     }
 
-    // Start: optiona Methods
-    private static void addWriter() {
-        System.out.println("TODO addWriter!!!");
-    }
+     private static void executeOption(int option) {
+        MenuOptionsMethods menuOptionsMethods = new MenuOptionsMethods();
 
-    private static void deleteWriter() {
-        System.out.println("TODO deleteWriter!!!");
-    }
-
-    private static void assignNewsToWriter() {
-        System.out.println("TODO assignNewsToWriter!!!");
-    }
-
-    private static void deleteNews() {
-        System.out.println("TODO deleteNews!!!");
-    }
-
-    private static void showNewsByWriter() {
-        System.out.println("TODO showNewsByWriter!!!");
-    }
-
-    private static void calculateScoreNews() {
-        System.out.println("TODO calculateScoreNews!!!");
-    }
-
-    private static void calculateNewsPrice() {
-        System.out.println("TODO calculateScoreNews!!!");
-    }
-
-    // END: options  Methods
-    private static void executeOption(int option) {
         switch (option) {
             case 1:
-                addWriter();
+                menuOptionsMethods.addWriter();
                 break;
             case 2:
-                deleteWriter();
+                menuOptionsMethods.deleteWriter();
                 break;
             case 3:
-                assignNewsToWriter();
+                menuOptionsMethods.assignNewsToWriter();
                 break;
             case 4:
-                deleteNews();
+                menuOptionsMethods.deleteNews();
                 break;
             case 5:
-                showNewsByWriter();
+                menuOptionsMethods.showNewsByWriter();
                 break;
             case 6:
-                calculateScoreNews();
+                menuOptionsMethods.calculateScoreNews();
                 break;
             case 7:
-                calculateNewsPrice();
+                menuOptionsMethods.calculateNewsPrice();
                 break;
-            default:
-                System.out.println("TODO ejecutar option!!!");
         }
     }
 
