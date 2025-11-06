@@ -21,6 +21,13 @@ public class Writer {
         newsArrayList.add(news);
     }
 
+    public void printAssignedNews(){
+        News news;
+        for (int i = 0; i < newsArrayList.size(); i++){
+            System.out.println("- ID :" + i + " , " + newsArrayList.get(i));
+        }
+    }
+
     @Override
     public String toString(){
         return ("Name : " + name + ", DNI : " + dni + ", Salary: " + salary) ;

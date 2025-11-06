@@ -6,11 +6,11 @@ public abstract class News {
     private double score;
     private double price;
 
-    public News(String title){
+    public News(String title, double score, double price){
         this.title = title;
         this.text = "";
-        this.score = 0.0;
-        this.price = 0.0;
+        this.score = score;
+        this.price = price;
     }
 
     public String getTitle() {

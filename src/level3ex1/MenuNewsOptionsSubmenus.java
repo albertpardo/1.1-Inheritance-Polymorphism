@@ -38,7 +38,7 @@ public class MenuNewsOptionsSubmenus {
             competition = MenuUtils.inputStringByCli("Competition name?");
         }
 
-        System.out.println("Select Clubr:");
+        System.out.println("Select Club:");
         option = 0;
         while (option == 0){
             System.out.println("1.- " + CLUB_BCN);
@@ -85,9 +85,8 @@ public class MenuNewsOptionsSubmenus {
                 player = MenuUtils.inputStringByCli("Player name?");
                 break;
         }
-
-        System.out.println(competition + ", " + club + ", " + player);
         footballnews = new Footballnews(title, competition, club, player);
-        System.out.println("NOTICIA : \n" + footballnews.toString());
+        writer.addNews(footballnews);
+        writer.printAssignedNews();  //DELETE
     }
 }

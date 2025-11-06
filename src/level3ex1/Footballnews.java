@@ -4,9 +4,11 @@ public class Footballnews extends News{
     private String competition;
     private String club;
     private String player;
+    private static final double START_PRICE = 300.0;
+    private static final double START_SCORE = 5.0;
 
     public Footballnews(String title, String competition, String club, String player){
-        super(title);
+        super(title, START_SCORE, START_PRICE);
         this.competition = competition;
         this.club = club;
         this.player = player;
@@ -24,6 +26,6 @@ public class Footballnews extends News{
 
     @Override
     public String toString() {
-        return ("Title : " + super.getTitle() + "\n Score : " + super.getScore() + "\n Price : " + super.getPrice() + "\n Competition: " + competition + "\n Club : " + club + "\n Player: " + player);
+        return ("Title : " + super.getTitle() + ", Score : " + super.getScore() + ", Price : " + super.getPrice() + ", Competition: " + competition + ", Club : " + club + ", Player: " + player);
     }
 }

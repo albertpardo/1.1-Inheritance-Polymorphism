@@ -98,7 +98,7 @@ public class MenuMainOptionsMethods {
             writerId = Integer.parseInt(input1);
             if (writerId < writers.size()){
                 writer = writers.get(writerId);
-                System.out.println("---- Selected writer name :" + writer.getName());
+                System.out.println("-> Selected writer name :" + writer.getName());
                 MenuNews.start(writer);
             }
             else
@@ -106,9 +106,6 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
-
-        System.out.println("TODO assignNewsToWriter!!!");
-
     }
 
     public void deleteNews( ArrayList<Writer> writers) {
