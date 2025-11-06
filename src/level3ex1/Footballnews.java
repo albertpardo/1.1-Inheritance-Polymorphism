@@ -9,7 +9,7 @@ public class Footballnews extends News{
         super(title);
         this.competition = competition;
         this.club = club;
-        this. player = player;
+        this.player = player;
     }
 
     @Override

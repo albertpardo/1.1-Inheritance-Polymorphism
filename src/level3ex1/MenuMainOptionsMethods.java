@@ -85,9 +85,30 @@ public class MenuMainOptionsMethods {
     }
 
     public void assignNewsToWriter(ArrayList<Writer> writers) {
+        Writer writer;
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int writerId;
+
+        printWritersName(writers);
+        System.out.print("\nPut the writer Id to select one: ");
+        input1 = scanner.next();
+        input2 = scanner.nextLine();
+        if (input2.isEmpty() && input1.matches("^\\d+$")){
+            writerId = Integer.parseInt(input1);
+            if (writerId < writers.size()){
+                writer = writers.get(writerId);
+                System.out.println("---- Selected writer name :" + writer.getName());
+                MenuNews.start(writer);
+            }
+            else
+                System.out.println("\nNo valid Id!!!");
+        }
+        else
+            System.out.println("\nInput Error!!!");
+
         System.out.println("TODO assignNewsToWriter!!!");
-        //TODO Seleccionar Writer
-        MenuNews.start(writers);
+
     }
 
     public void deleteNews( ArrayList<Writer> writers) {

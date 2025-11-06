@@ -31,13 +31,13 @@ public class MenuNews {
         return option;
     }
 
-    private static void executeOption(int option, ArrayList<Writer> writers) {
+    private static void executeOption(int option, Writer writer) {
         String title;
 
         title = MenuUtils.inputStringByCli("News title? ");
         switch (option) {
             case 1:
-                MenuNewsOptionsSubmenus.footballNews(title,writers);
+                MenuNewsOptionsSubmenus.footballNews(title,writer);
                 break;
             case 2:
                 break;
@@ -50,13 +50,13 @@ public class MenuNews {
         }
     }
 
-    public static void start(ArrayList<Writer> writers){
+    public static void start(Writer writer){
         int option;
         boolean exit = false;
 
         printMenuNews();
         option = getOption();
-        executeOption(option, writers);
+        executeOption(option, writer);
         System.out.println();
     }
 }

@@ -12,7 +12,7 @@ public class MenuNewsOptionsSubmenus {
     private static final String PLAYER_BEN = "Benzema";
 
 
-    public static void footballNews(String title, ArrayList<Writer> writers){
+    public static void footballNews(String title, Writer writer){
         Footballnews footballnews;
         Scanner scanner = new Scanner(System.in);
         String input;
