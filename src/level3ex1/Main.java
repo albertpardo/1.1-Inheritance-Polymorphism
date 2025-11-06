@@ -5,8 +5,9 @@ package level3ex1;
 public class Main {
      public static void main(String[] args){
         //menu();
-        Menu menu = new Menu();
+        MenuMain menuMain = new MenuMain();
 
-        menu.start();
+        menuMain.start();
     }
+
 }

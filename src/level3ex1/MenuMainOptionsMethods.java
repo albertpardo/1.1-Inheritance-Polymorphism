@@ -1,10 +1,11 @@
 package level3ex1;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class MenuOptionsMethods {
+public class MenuMainOptionsMethods {
     private void printWritersInfo(ArrayList<Writer> writers){
         System.out.println("\n Writers Info: ");
         Iterator<Writer> it = writers.iterator();
@@ -21,6 +22,7 @@ public class MenuOptionsMethods {
         }
     }
 
+/*
     private String inputStringByCli(String msg) {
         Scanner scanner = new Scanner(System.in);
         String input = "";
@@ -31,6 +33,7 @@ public class MenuOptionsMethods {
         }
         return input;
     }
+*/
 
     public void addWriter(ArrayList<Writer> writers) {
         /*
@@ -50,8 +53,8 @@ public class MenuOptionsMethods {
         String name;
         String dni;
 
-        name = inputStringByCli("Writer's name?");
-        dni = inputStringByCli("Writer's DNI?");
+        name = MenuUtils.inputStringByCli("Writer's name?");
+        dni = MenuUtils.inputStringByCli("Writer's DNI?");
         writers.add(new Writer(name, dni));
         printWritersInfo(writers);
     }
@@ -83,6 +86,8 @@ public class MenuOptionsMethods {
 
     public void assignNewsToWriter(ArrayList<Writer> writers) {
         System.out.println("TODO assignNewsToWriter!!!");
+        //TODO Seleccionar Writer
+        MenuNews.start(writers);
     }
 
     public void deleteNews( ArrayList<Writer> writers) {

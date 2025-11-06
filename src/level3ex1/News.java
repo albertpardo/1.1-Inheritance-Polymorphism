@@ -13,6 +13,30 @@ public abstract class News {
         this.price = 0.0;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getText(){
+        return text;
+    }
+
+    public double getScore(){
+        return score;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setScore(double score){
+        this.score = score;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
     public abstract void calculatePrice();
     public abstract void calculateScore();
 }

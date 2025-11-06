@@ -3,7 +3,7 @@ package level3ex1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+public class MenuMain {
 
     private static void printMenu(){
         System.out.println("Main Menu :");
@@ -35,29 +35,29 @@ public class Menu {
     }
 
      private static void executeOption(int option, ArrayList<Writer> writers) {
-        MenuOptionsMethods menuOptionsMethods = new MenuOptionsMethods();
+        MenuMainOptionsMethods menuMainOptionsMethods = new MenuMainOptionsMethods();
 
         switch (option) {
             case 1:
-                menuOptionsMethods.addWriter(writers);
+                menuMainOptionsMethods.addWriter(writers);
                 break;
             case 2:
-                menuOptionsMethods.deleteWriter(writers);
+                menuMainOptionsMethods.deleteWriter(writers);
                 break;
             case 3:
-                menuOptionsMethods.assignNewsToWriter(writers);
+                menuMainOptionsMethods.assignNewsToWriter(writers);
                 break;
             case 4:
-                menuOptionsMethods.deleteNews(writers);
+                menuMainOptionsMethods.deleteNews(writers);
                 break;
             case 5:
-                menuOptionsMethods.showNewsByWriter(writers);
+                menuMainOptionsMethods.showNewsByWriter(writers);
                 break;
             case 6:
-                menuOptionsMethods.calculateScoreNews(writers);
+                menuMainOptionsMethods.calculateScoreNews(writers);
                 break;
             case 7:
-                menuOptionsMethods.calculateNewsPrice(writers);
+                menuMainOptionsMethods.calculateNewsPrice(writers);
                 break;
         }
     }
