@@ -75,6 +75,7 @@ public class MenuMain {
             else
                 exit = true;
             System.out.println();
+            writers.getFirst().printAssignedNews();
         }
     }
 }

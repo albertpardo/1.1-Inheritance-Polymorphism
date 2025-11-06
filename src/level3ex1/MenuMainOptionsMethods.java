@@ -109,7 +109,32 @@ public class MenuMainOptionsMethods {
     }
 
     public void deleteNews( ArrayList<Writer> writers) {
-        System.out.println("TODO deleteNews!!!");
+
+        Writer writer;
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int writerId;
+
+        printWritersName(writers);
+        System.out.print("\nPut the writer Id to select one: ");
+        input1 = scanner.next();
+        input2 = scanner.nextLine();
+        if (input2.isEmpty() && input1.matches("^\\d+$")){
+            writerId = Integer.parseInt(input1);
+            if (writerId < writers.size()){
+                writer = writers.get(writerId);
+                System.out.println("-> Selected writer name :" + writer.getName());
+
+                //2. pedir titular
+                //3. Borrar news
+                System.out.println(" ---- TODO : Pedir news y borrarla");
+            }
+            else
+                System.out.println("\nNo valid Id!!!");
+        }
+        else
+            System.out.println("\nInput Error!!!");
+
     }
 
     public void showNewsByWriter(ArrayList<Writer> writers) {
