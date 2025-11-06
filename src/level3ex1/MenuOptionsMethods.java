@@ -19,8 +19,21 @@ public class MenuOptionsMethods {
         for (int i = 0; i < writers.size(); i++){
             System.out.println(" - Id:" + i + "\tNAME: " + writers.get(i).getName());
         }
-   }
+    }
+
+    private String inputStringByCli(String msg) {
+        Scanner scanner = new Scanner(System.in);
+        String input = "";
+
+        while (input.isEmpty()){
+            System.out.println(msg);
+            input = scanner.nextLine();
+        }
+        return input;
+    }
+
     public void addWriter(ArrayList<Writer> writers) {
+        /*
         String name = "";
         String dni = "";
         Scanner scanner = new Scanner(System.in);
@@ -33,6 +46,12 @@ public class MenuOptionsMethods {
             System.out.println("Writer's DNI?");
             dni = scanner.nextLine();
         }
+        */
+        String name;
+        String dni;
+
+        name = inputStringByCli("Writer's name?");
+        dni = inputStringByCli("Writer's DNI?");
         writers.add(new Writer(name, dni));
         printWritersInfo(writers);
     }
@@ -41,7 +60,6 @@ public class MenuOptionsMethods {
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
         int writerId;
-        String name;
 
         printWritersName(writers);
         System.out.print("\nTo delete, put the Id associated to Writer's name: ");
@@ -50,6 +68,8 @@ public class MenuOptionsMethods {
         if (input2.isEmpty() && input1.matches("^\\d+$")){
             writerId = Integer.parseInt(input1);
             if (writerId < writers.size()){
+                String name;
+
                 name = writers.get(writerId).getName();
                 writers.remove(writerId);
                 System.out.println("\n " + name + " has been deleted!");
