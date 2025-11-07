@@ -150,11 +150,31 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
-
     }
 
     public void showNewsByWriter(ArrayList<Writer> writers) {
-        System.out.println("TODO showNewsByWriter!!!");
+        Writer writer;
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int writerId;
+
+        printWritersName(writers);
+        System.out.print("\nPut the writer Id to select one: ");
+        input1 = scanner.next();
+        input2 = scanner.nextLine();
+        if (input2.isEmpty() && input1.matches("^\\d+$")){
+            writerId = Integer.parseInt(input1);
+            if (writerId < writers.size()){
+                writer = writers.get(writerId);
+                System.out.println("-> Selected writer name :" + writer.getName());
+                System.out.println("\nList of News:");
+                writer.printAssignedNews();
+            }
+            else
+                System.out.println("\nNo valid Id!!!");
+        }
+        else
+            System.out.println("\nInput Error!!!");
     }
 
     public void calculateScoreNews(ArrayList<Writer> writers) {

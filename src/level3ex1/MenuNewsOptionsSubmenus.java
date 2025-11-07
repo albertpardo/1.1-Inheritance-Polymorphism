@@ -87,6 +87,5 @@ public class MenuNewsOptionsSubmenus {
         }
         footballnews = new Footballnews(title, competition, club, player);
         writer.addNews(footballnews);
-        writer.printAssignedNews();  //DELETE
     }
 }
