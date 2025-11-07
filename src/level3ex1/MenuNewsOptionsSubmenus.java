@@ -5,44 +5,44 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuNewsOptionsSubmenus {
-    private static final String CHAMPIONS = "Champions league";
-    private static final String CLUB_BCN = "Barcelona";
-    private static final String CLUB_MAD = "Madrid";
-    private static final String PLAYER_FER = "Ferran Torres";
-    private static final String PLAYER_BEN = "Benzema";
-
 
     public static void footballNews(String title, Writer writer){
         Footballnews footballnews;
         Scanner scanner = new Scanner(System.in);
         String input;
         int option = 0;
-        String competition;
+        String competition = "";
         String club = "";
         String player = "";
 
         System.out.println("FootballNews questions:");
         while (option == 0){
             System.out.println("Select competition:");
-            System.out.println("1.- " + CHAMPIONS);
-            System.out.println("2.- Other league (must be put):");
+            System.out.println("1.- " + ConstatsKeysNews.FOOTBALL_LEAGUE_CHAMPIONS);
+            System.out.println("2.- " + ConstatsKeysNews.FOOTBALL_LEAGUE_LALIGA);
+            System.out.println("3.- Other league (must be put):");
             input = scanner.nextLine();
-            if (input.matches("[1-2]"))
+            if (input.matches("[1-3]"))
                 option = Integer.parseInt(input);
             else
                 System.out.println("\nBad option!!");
         }
-        if (option == 1)
-            competition = CHAMPIONS;
-        else {
-            competition = MenuUtils.inputStringByCli("Competition name?");
+        switch (option) {
+            case 1:
+                competition = ConstatsKeysNews.FOOTBALL_LEAGUE_CHAMPIONS;
+                break;
+            case 2:
+                competition = ConstatsKeysNews.FOOTBALL_LEAGUE_LALIGA;
+                break;
+            case 3:
+                competition = MenuUtils.inputStringByCli("Competition name?");
+                break;
         }
-
         System.out.println("Select Club:");
         option = 0;
         while (option == 0){
-            System.out.println("1.- " + CLUB_BCN);
-            System.out.println("2.- " + CLUB_MAD);
+            System.out.println("1.- " + ConstatsKeysNews.CLUB_FOOT_BCN);
+            System.out.println("2.- " + ConstatsKeysNews.CLUB_FOOT_MAD);
             System.out.println("3.- Other club (must be put):");
             input = scanner.nextLine();
             if (input.matches("[1-3]"))
@@ -52,10 +52,10 @@ public class MenuNewsOptionsSubmenus {
         }
         switch (option) {
             case 1:
-                club = CLUB_BCN;
+                club = ConstatsKeysNews.CLUB_FOOT_BCN;
                 break;
             case 2:
-                club = CLUB_MAD;
+                club = ConstatsKeysNews.CLUB_FOOT_MAD;
                 break;
             case 3:
                 club = MenuUtils.inputStringByCli("Club name?");
@@ -65,8 +65,8 @@ public class MenuNewsOptionsSubmenus {
         System.out.println("Select player:");
         option = 0;
         while (option == 0){
-            System.out.println("1.- " + PLAYER_BEN);
-            System.out.println("2.- " + PLAYER_FER);
+            System.out.println("1.- " + ConstatsKeysNews.PLAYER_BEN);
+            System.out.println("2.- " + ConstatsKeysNews.PLAYER_FER);
             System.out.println("3.- Other player (must be put):");
             input = scanner.nextLine();
             if (input.matches("[1-3]"))
@@ -76,10 +76,10 @@ public class MenuNewsOptionsSubmenus {
         }
         switch (option) {
             case 1:
-                player = PLAYER_BEN;
+                player = ConstatsKeysNews.PLAYER_BEN;
                 break;
             case 2:
-                player = PLAYER_FER;
+                player = ConstatsKeysNews.PLAYER_FER;
                 break;
             case 3:
                 player = MenuUtils.inputStringByCli("Player name?");

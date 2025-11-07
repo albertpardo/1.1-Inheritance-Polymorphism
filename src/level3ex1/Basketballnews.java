@@ -13,12 +13,12 @@ public class Basketballnews extends News {
     }
 
     @Override
-    public void calculatePrice() {
+    public void calculatePrice(MapOfPointsPricesForNews pointsPricesNewsMap) {
         //Todo
     }
 
     @Override
-    public void calculateScore() {
+    public void calculateScore(MapOfPointsPricesForNews pointsPricesNewsMap) {
         //Todo
     }
 }

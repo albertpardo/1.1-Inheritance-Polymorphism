@@ -37,6 +37,6 @@ public abstract class News {
         this.price = price;
     }
 
-    public abstract void calculatePrice();
-    public abstract void calculateScore();
+    public abstract void calculatePrice(MapOfPointsPricesForNews pointsPricesNewsMap);
+    public abstract void calculateScore(MapOfPointsPricesForNews pointsPricesNewsMap);
 }

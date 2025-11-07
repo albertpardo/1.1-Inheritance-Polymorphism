@@ -1,6 +1,7 @@
 package level3ex1;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class MenuMain {
@@ -34,7 +35,7 @@ public class MenuMain {
         return option;
     }
 
-     private static void executeOption(int option, ArrayList<Writer> writers) {
+     private static void executeOption(int option, ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
         MenuMainOptionsMethods menuMainOptionsMethods = new MenuMainOptionsMethods();
 
         switch (option) {
@@ -54,10 +55,10 @@ public class MenuMain {
                 menuMainOptionsMethods.showNewsByWriter(writers);
                 break;
             case 6:
-                menuMainOptionsMethods.calculateScoreNews(writers);
+                menuMainOptionsMethods.calculateScoreNews(writers, pointsPricesNewsMap);
                 break;
             case 7:
-                menuMainOptionsMethods.calculateNewsPrice(writers);
+                menuMainOptionsMethods.calculateNewsPrice(writers, pointsPricesNewsMap);
                 break;
         }
     }
@@ -66,12 +67,13 @@ public class MenuMain {
         int option = 0;
         boolean exit = false;
         ArrayList<Writer> writers = new ArrayList<>();
+        MapOfPointsPricesForNews pointsPricesNewsMap = new MapOfPointsPricesForNews();
 
         while (!exit){
             printMenu();
             option = getOption();
             if (option != 8)
-                executeOption(option, writers);
+                executeOption(option, writers, pointsPricesNewsMap);
             else
                 exit = true;
             System.out.println();

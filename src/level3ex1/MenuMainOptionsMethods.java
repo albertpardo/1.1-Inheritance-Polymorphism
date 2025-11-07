@@ -108,7 +108,7 @@ public class MenuMainOptionsMethods {
             System.out.println("\nInput Error!!!");
     }
 
-    public void deleteNews( ArrayList<Writer> writers) {
+    public void deleteNews(ArrayList<Writer> writers) {
 
         Writer writer;
         String input1, input2;
@@ -141,9 +141,8 @@ public class MenuMainOptionsMethods {
                         System.out.println("\nNo valid Id!!!");
                     }
                 }
-                else {
+                else
                     System.out.println("\nNo valid Id!!!");
-                }
             }
             else
                 System.out.println("\nNo valid Id!!!");
@@ -177,12 +176,85 @@ public class MenuMainOptionsMethods {
             System.out.println("\nInput Error!!!");
     }
 
-    public void calculateScoreNews(ArrayList<Writer> writers) {
-        System.out.println("TODO calculateScoreNews!!!");
+    public void calculateScoreNews(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
+
+        Writer writer;
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int writerId;
+
+        printWritersName(writers);
+        System.out.print("\nPut the writer Id to select one: ");
+        input1 = scanner.next();
+        input2 = scanner.nextLine();
+        if (input2.isEmpty() && input1.matches("^\\d+$")){
+            writerId = Integer.parseInt(input1);
+            if (writerId < writers.size()){
+                writer = writers.get(writerId);
+                System.out.println("-> Selected writer name :" + writer.getName());
+                System.out.println("\nList of News:");
+                writer.printAssignedNews();
+
+                System.out.println("Put de news ID to calculate the price : ");
+                input1 = scanner.next();
+                input2 = scanner.nextLine();
+                if (input2.isEmpty() && input1.matches("^\\d+$")){
+                    int option;
+                    option = Integer.parseInt(input1);
+                    if (option > -1 && option < writer.getAssignedNewsSize())
+                        writer.getAssignedNewsById(option).calculateScore(pointsPricesNewsMap);
+                    else
+                        System.out.println("\nNo valid Id!!!");
+                }
+                else {
+                    System.out.println("\nNo valid Id!!!");
+                }
+            }
+            else
+                System.out.println("\nNo valid Id!!!");
+        }
+        else
+            System.out.println("\nInput Error!!!");
     }
 
-    public void calculateNewsPrice(ArrayList<Writer> writers) {
-        System.out.println("TODO calculateScoreNews!!!");
+    public void calculateNewsPrice(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
+        Writer writer;
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int writerId;
+
+        printWritersName(writers);
+        System.out.print("\nPut the writer Id to select one: ");
+        input1 = scanner.next();
+        input2 = scanner.nextLine();
+        if (input2.isEmpty() && input1.matches("^\\d+$")){
+            writerId = Integer.parseInt(input1);
+            if (writerId < writers.size()){
+                writer = writers.get(writerId);
+                System.out.println("-> Selected writer name :" + writer.getName());
+                System.out.println("\nList of News:");
+                writer.printAssignedNews();
+
+                System.out.println("Put de news ID to calculate the price : ");
+                input1 = scanner.next();
+                input2 = scanner.nextLine();
+                if (input2.isEmpty() && input1.matches("^\\d+$")){
+                    int option;
+                    option = Integer.parseInt(input1);
+                    if (option > -1 && option < writer.getAssignedNewsSize())
+                        writer.getAssignedNewsById(option).calculatePrice(pointsPricesNewsMap);
+                    else
+                        System.out.println("\nNo valid Id!!!");
+                }
+                else {
+                    System.out.println("\nNo valid Id!!!");
+                }
+            }
+            else
+                System.out.println("\nNo valid Id!!!");
+        }
+        else
+            System.out.println("\nInput Error!!!");
     }
 
 }

@@ -32,6 +32,9 @@ public class Writer {
         return newsArrayList.size();
     }
 
+    public News getAssignedNewsById(int id){
+        return newsArrayList.get(id);
+    }
     public void deleteNewsById(int newsId){
         newsArrayList.remove(newsId);
     }
