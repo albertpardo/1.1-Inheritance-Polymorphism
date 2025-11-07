@@ -124,10 +124,26 @@ public class MenuMainOptionsMethods {
             if (writerId < writers.size()){
                 writer = writers.get(writerId);
                 System.out.println("-> Selected writer name :" + writer.getName());
+                System.out.println("\nList of News:");
+                writer.printAssignedNews();
 
-                //2. pedir titular
-                //3. Borrar news
-                System.out.println(" ---- TODO : Pedir news y borrarla");
+                System.out.println("Put de news ID to delete : ");
+                input1 = scanner.next();
+                input2 = scanner.nextLine();
+                if (input2.isEmpty() && input1.matches("^\\d+$")){
+                    int option;
+                    option = Integer.parseInt(input1);
+                    if (option > -1 && option < writer.getAssignedNewsSize()){
+                        writer.deleteNewsById(option);
+                        System.out.println(" The news with ID = " + option + " has been deleted");
+                    }
+                    else {
+                        System.out.println("\nNo valid Id!!!");
+                    }
+                }
+                else {
+                    System.out.println("\nNo valid Id!!!");
+                }
             }
             else
                 System.out.println("\nNo valid Id!!!");

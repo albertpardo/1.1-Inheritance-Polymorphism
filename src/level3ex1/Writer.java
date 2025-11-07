@@ -28,6 +28,14 @@ public class Writer {
         }
     }
 
+    public int getAssignedNewsSize(){
+        return newsArrayList.size();
+    }
+
+    public void deleteNewsById(int newsId){
+        newsArrayList.remove(newsId);
+    }
+
     @Override
     public String toString(){
         return ("Name : " + name + ", DNI : " + dni + ", Salary: " + salary) ;
