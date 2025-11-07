@@ -26,6 +26,6 @@ public class Footballnews extends News{
 
     @Override
     public String toString() {
-        return ("Title : " + super.getTitle() + ", Score : " + super.getScore() + ", Basic Price : " + super.getPrice() + ", Competition: " + competition + ", Club : " + club + ", Player: " + player);
+        return ("Title : " + super.getTitle() + ", Score : " + super.getScore() + ", Start Price : " + super.getPrice() + ", Competition: " + competition + ", Club : " + club + ", Player: " + player);
     }
 }
