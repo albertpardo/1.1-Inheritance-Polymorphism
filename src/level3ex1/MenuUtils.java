@@ -25,27 +25,58 @@ public class MenuUtils {
         return input;
     }
 
-    public static int inputWriterIdByCli(ArrayList<Writer> writers){
+    public static int selectWriterIdByCli(ArrayList<Writer> writers){
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
         int writerId = -1;
 
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
+        if (!writers.isEmpty()) {
+            printWritersName(writers);
+            System.out.print("\nPut the writer Id to select one: ");
+            input1 = scanner.next();
+            input2 = scanner.nextLine();
+            if (input2.isEmpty() && input1.matches("^\\d+$")) {
+                writerId = Integer.parseInt(input1);
+                if (writerId < writers.size()) {
+                    writer = writers.get(writerId);
+                    System.out.println("-> Selected writer name :" + writer.getName());
+                } else
+                    System.out.println("\nNo valid Id!!!");
+            } else
+                System.out.println("\nInput Error!!!");
         }
         else
-            System.out.println("\nInput Error!!!");
+            System.out.println("\nNo writer added. Please add writers!");
         return writerId;
+    }
+
+    public static int selectNewsIdByCli(Writer writer){
+        String input1, input2;
+        Scanner scanner = new Scanner(System.in);
+        int newsId = -1;
+
+        if (writer.getAssignedNewsSize() > 0) {
+            System.out.println("\nList of News:");
+            writer.printAssignedNews();
+
+            System.out.println("Select news' ID : ");
+            input1 = scanner.next();
+            input2 = scanner.nextLine();
+            if (input2.isEmpty() && input1.matches("^\\d+$")) {
+                newsId = Integer.parseInt(input1);
+                if (newsId > -1 && newsId < writer.getAssignedNewsSize())
+                    return newsId;
+        /*
+                else
+                    System.out.println("\nNo valid Id!!!");
+            } else
+                System.out.println("\nNo valid Id!!!");
+         */
+            }
+            System.out.println("\nNo valid Id!!!");
+        }
+
+        return newsId;
     }
 }

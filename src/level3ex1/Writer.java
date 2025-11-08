@@ -23,9 +23,14 @@ public class Writer {
 
     public void printAssignedNews(){
         News news;
-        for (int i = 0; i < newsArrayList.size(); i++){
-            System.out.println("- ID :" + i + " , " + newsArrayList.get(i));
+        if (!newsArrayList.isEmpty()) {
+            System.out.println("\nList of News:");
+            for (int i = 0; i < newsArrayList.size(); i++){
+                System.out.println("- ID :" + i + " , " + newsArrayList.get(i));
+            }
         }
+        else
+            System.out.println("No News for selected writer!");
     }
 
     public int getAssignedNewsSize(){

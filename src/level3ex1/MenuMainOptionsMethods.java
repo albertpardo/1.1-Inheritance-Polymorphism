@@ -1,6 +1,5 @@
 package level3ex1;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -87,7 +86,7 @@ public class MenuMainOptionsMethods {
          */
         int writerId;
 
-        writerId = MenuUtils.inputWriterIdByCli(writers);
+        writerId = MenuUtils.selectWriterIdByCli(writers);
         if (writerId > -1){
             String name;
 
@@ -125,14 +124,14 @@ public class MenuMainOptionsMethods {
          */
         int writerId;
 
-        writerId = MenuUtils.inputWriterIdByCli(writers);
+        writerId = MenuUtils.selectWriterIdByCli(writers);
         if (writerId > -1)
             MenuNews.start(writers.get(writerId));
-
     }
 
     public void deleteNews(ArrayList<Writer> writers) {
 
+        /*
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
@@ -160,9 +159,8 @@ public class MenuMainOptionsMethods {
                         writer.deleteNewsById(option);
                         System.out.println(" The news with ID = " + option + " has been deleted");
                     }
-                    else {
+                    else
                         System.out.println("\nNo valid Id!!!");
-                    }
                 }
                 else
                     System.out.println("\nNo valid Id!!!");
@@ -172,9 +170,25 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
+
+         */
+        int writerId;
+        int newsId;
+        Writer writer;
+
+        writerId = MenuUtils.selectWriterIdByCli(writers);
+        if (writerId > -1){
+            writer = writers.get(writerId);
+            newsId = MenuUtils.selectNewsIdByCli(writer);
+            if (newsId > -1) {
+                writer.deleteNewsById(newsId);
+                System.out.println(" The news with ID = " + newsId + " has been deleted");
+            }
+        }
     }
 
     public void showNewsByWriter(ArrayList<Writer> writers) {
+        /*
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
@@ -197,6 +211,16 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
+         */
+
+        int writerId;
+        Writer writer;
+
+        writerId = MenuUtils.selectWriterIdByCli(writers);
+        if (writerId > -1){
+            writer = writers.get(writerId);
+            writer.printAssignedNews();
+        }
     }
 
     public void calculateScoreNews(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
