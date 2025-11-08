@@ -60,6 +60,7 @@ public class MenuMainOptionsMethods {
     }
 
     public void deleteWriter(ArrayList<Writer> writers) {
+        /*
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
         int writerId;
@@ -82,9 +83,23 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
+
+         */
+        int writerId;
+
+        writerId = MenuUtils.inputWriterIdByCli(writers);
+        if (writerId > -1){
+            String name;
+
+            name = writers.get(writerId).getName();
+            writers.remove(writerId);
+            System.out.println("\n " + name + " has been deleted!");
+        }
+
     }
 
     public void assignNewsToWriter(ArrayList<Writer> writers) {
+        /*
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
@@ -106,6 +121,14 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
+
+         */
+        int writerId;
+
+        writerId = MenuUtils.inputWriterIdByCli(writers);
+        if (writerId > -1)
+            MenuNews.start(writers.get(writerId));
+
     }
 
     public void deleteNews(ArrayList<Writer> writers) {
