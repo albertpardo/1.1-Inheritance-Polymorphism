@@ -21,7 +21,6 @@ public class MenuNews {
 
         System.out.print("\nChoose News' Type: ");
         readLine = scanner.nextLine();
-        //if (readLine.length() == 1 & (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'))
         if (readLine.matches("[1-5]"))
             option = Integer.parseInt(readLine);
         else {
@@ -56,7 +55,6 @@ public class MenuNews {
 
     public static void start(Writer writer){
         int option;
-        boolean exit = false;
 
         printMenuNews();
         option = getOption();

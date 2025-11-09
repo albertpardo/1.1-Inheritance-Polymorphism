@@ -21,34 +21,7 @@ public class MenuMainOptionsMethods {
         }
     }
 
-/*
-    private String inputStringByCli(String msg) {
-        Scanner scanner = new Scanner(System.in);
-        String input = "";
-
-        while (input.isEmpty()){
-            System.out.println(msg);
-            input = scanner.nextLine();
-        }
-        return input;
-    }
-*/
-
     public void addWriter(ArrayList<Writer> writers) {
-        /*
-        String name = "";
-        String dni = "";
-        Scanner scanner = new Scanner(System.in);
-
-        while (name.isEmpty()){
-            System.out.println("Writer's name?");
-            name = scanner.nextLine();
-        }
-        while (dni.isEmpty()){
-            System.out.println("Writer's DNI?");
-            dni = scanner.nextLine();
-        }
-        */
         String name;
         String dni;
 
@@ -59,31 +32,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void deleteWriter(ArrayList<Writer> writers) {
-        /*
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nTo delete, put the Id associated to Writer's name: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                String name;
-
-                name = writers.get(writerId).getName();
-                writers.remove(writerId);
-                System.out.println("\n " + name + " has been deleted!");
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-
-         */
         int writerId;
 
         writerId = MenuUtils.selectWriterIdByCli(writers);
@@ -98,30 +46,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void assignNewsToWriter(ArrayList<Writer> writers) {
-        /*
-        Writer writer;
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-                MenuNews.start(writer);
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-
-         */
         int writerId;
 
         writerId = MenuUtils.selectWriterIdByCli(writers);
@@ -130,48 +54,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void deleteNews(ArrayList<Writer> writers) {
-
-        /*
-        Writer writer;
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-                System.out.println("\nList of News:");
-                writer.printAssignedNews();
-
-                System.out.println("Put de news ID to delete : ");
-                input1 = scanner.next();
-                input2 = scanner.nextLine();
-                if (input2.isEmpty() && input1.matches("^\\d+$")){
-                    int option;
-                    option = Integer.parseInt(input1);
-                    if (option > -1 && option < writer.getAssignedNewsSize()){
-                        writer.deleteNewsById(option);
-                        System.out.println(" The news with ID = " + option + " has been deleted");
-                    }
-                    else
-                        System.out.println("\nNo valid Id!!!");
-                }
-                else
-                    System.out.println("\nNo valid Id!!!");
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-
-         */
         int writerId;
         int newsId;
         Writer writer;
@@ -188,31 +70,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void showNewsByWriter(ArrayList<Writer> writers) {
-        /*
-        Writer writer;
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-                System.out.println("\nList of News:");
-                writer.printAssignedNews();
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-         */
-
         int writerId;
         Writer writer;
 
@@ -224,48 +81,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void calculateScoreNews(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
-
-        /*
-        Writer writer;
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-                System.out.println("\nList of News:");
-                writer.printAssignedNews();
-
-                System.out.println("Put de news ID to calculate the price : ");
-                input1 = scanner.next();
-                input2 = scanner.nextLine();
-                if (input2.isEmpty() && input1.matches("^\\d+$")){
-                    int option;
-                    option = Integer.parseInt(input1);
-                    if (option > -1 && option < writer.getAssignedNewsSize())
-                        writer.getAssignedNewsById(option).calculateScore(pointsPricesNewsMap);
-                    else
-                        System.out.println("\nNo valid Id!!!");
-                }
-                else {
-                    System.out.println("\nNo valid Id!!!");
-                }
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-
-         */
-
         int writerId;
         int newsId;
         Writer writer;
@@ -280,46 +95,6 @@ public class MenuMainOptionsMethods {
     }
 
     public void calculateNewsPrice(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
-        /*
-        Writer writer;
-        String input1, input2;
-        Scanner scanner = new Scanner(System.in);
-        int writerId;
-
-        printWritersName(writers);
-        System.out.print("\nPut the writer Id to select one: ");
-        input1 = scanner.next();
-        input2 = scanner.nextLine();
-        if (input2.isEmpty() && input1.matches("^\\d+$")){
-            writerId = Integer.parseInt(input1);
-            if (writerId < writers.size()){
-                writer = writers.get(writerId);
-                System.out.println("-> Selected writer name :" + writer.getName());
-                System.out.println("\nList of News:");
-                writer.printAssignedNews();
-
-                System.out.println("Put de news ID to calculate the price : ");
-                input1 = scanner.next();
-                input2 = scanner.nextLine();
-                if (input2.isEmpty() && input1.matches("^\\d+$")){
-                    int option;
-                    option = Integer.parseInt(input1);
-                    if (option > -1 && option < writer.getAssignedNewsSize())
-                        writer.getAssignedNewsById(option).calculatePrice(pointsPricesNewsMap);
-                    else
-                        System.out.println("\nNo valid Id!!!");
-                }
-                else {
-                    System.out.println("\nNo valid Id!!!");
-                }
-            }
-            else
-                System.out.println("\nNo valid Id!!!");
-        }
-        else
-            System.out.println("\nInput Error!!!");
-*/
-
         int writerId;
         int newsId;
         Writer writer;

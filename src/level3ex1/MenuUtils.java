@@ -59,28 +59,17 @@ public class MenuUtils {
         int newsId = -1;
 
         if (writer.getAssignedNewsSize() > 0) {
-            System.out.println("\nList of News:");
             writer.printAssignedNews();
-
             System.out.println("Select news' ID : ");
             input1 = scanner.next();
             input2 = scanner.nextLine();
             if (input2.isEmpty() && input1.matches("^\\d+$")) {
                 newsId = Integer.parseInt(input1);
-                /*
-                if (newsId > -1 && newsId < writer.getAssignedNewsSize())
-                    return newsId;
-                 */
                 if (newsId < 0 || newsId >= writer.getAssignedNewsSize())
                     newsId = -1;
-        /*
-                else
-                    System.out.println("\nNo valid Id!!!");
-            } else
-                System.out.println("\nNo valid Id!!!");
-         */
             }
-            System.out.println("\nNo valid Id!!!");
+            else
+                System.out.println("\nNo valid Id!!!");
         }
         else
             System.out.println("\nNo News assigned. Please assign mews to this writer!");

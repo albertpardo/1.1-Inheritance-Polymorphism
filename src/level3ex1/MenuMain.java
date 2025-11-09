@@ -25,7 +25,6 @@ public class MenuMain {
 
         System.out.print("\nChoose option: ");
         readLine = scanner.nextLine();
-        //if (readLine.length() == 1 & (readLine.charAt(0) >'0' & readLine.charAt(0) <'9'))
         if (readLine.matches("[1-8]"))
             option = Integer.parseInt(readLine);
         else {

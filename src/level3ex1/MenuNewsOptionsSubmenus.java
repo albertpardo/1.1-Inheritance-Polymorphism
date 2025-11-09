@@ -227,7 +227,7 @@ public class MenuNewsOptionsSubmenus {
         int option = 0;
         String stable = "";
 
-        System.out.println("motocycleNews questions:");
+        System.out.println("MotocycleNews questions:");
         System.out.println("Select Motocycle Stable:");
         option = 0;
         while (option == 0){
