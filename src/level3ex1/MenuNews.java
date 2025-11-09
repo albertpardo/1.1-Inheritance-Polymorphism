@@ -43,6 +43,7 @@ public class MenuNews {
                 MenuNewsOptionsSubmenus.basketballNews(title, writer);
                 break;
             case 3:
+                MenuNewsOptionsSubmenus.tennisNews(title, writer);
                 break;
             case 4:
                 break;

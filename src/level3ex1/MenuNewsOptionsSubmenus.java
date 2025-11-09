@@ -145,4 +145,45 @@ public class MenuNewsOptionsSubmenus {
         basketballnews = new Basketballnews(title, competition, club);
         writer.addNews(basketballnews);
     }
+
+    public static void tennisNews(String title, Writer writer){
+        Tennisnews tennisNews;
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        int option = 0;
+        String player = "";
+
+        System.out.println("TennisNews questions:");
+        System.out.println("Select player:");
+        option = 0;
+        while (option == 0){
+            System.out.println("1.- " + ConstatsKeysNews.PLAYER_FEDE);
+            System.out.println("2.- " + ConstatsKeysNews.PLAYER_NADAL);
+            System.out.println("3.- " + ConstatsKeysNews.PLAYER_DJO);
+            System.out.println("4.- Other player (must be put):");
+            input = scanner.nextLine();
+            if (input.matches("[1-4]"))
+                option = Integer.parseInt(input);
+            else
+                System.out.println("\nBad option!!");
+        }
+        switch (option) {
+            case 1:
+                player = ConstatsKeysNews.PLAYER_FEDE;
+                break;
+            case 2:
+                player = ConstatsKeysNews.PLAYER_NADAL;
+                break;
+            case 3:
+                player = ConstatsKeysNews.PLAYER_DJO;
+                break;
+            case 4 :
+                    player = MenuUtils.inputStringByCli("Player name?");
+                break;
+        }
+
+        tennisNews = new Tennisnews(title, player);
+        writer.addNews(tennisNews);
+
+    }
 }
