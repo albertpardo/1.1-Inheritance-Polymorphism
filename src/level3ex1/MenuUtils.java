@@ -67,8 +67,12 @@ public class MenuUtils {
             input2 = scanner.nextLine();
             if (input2.isEmpty() && input1.matches("^\\d+$")) {
                 newsId = Integer.parseInt(input1);
+                /*
                 if (newsId > -1 && newsId < writer.getAssignedNewsSize())
                     return newsId;
+                 */
+                if (newsId < 0 || newsId >= writer.getAssignedNewsSize())
+                    newsId = -1;
         /*
                 else
                     System.out.println("\nNo valid Id!!!");

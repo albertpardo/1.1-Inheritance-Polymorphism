@@ -46,8 +46,10 @@ public class MenuNews {
                 MenuNewsOptionsSubmenus.tennisNews(title, writer);
                 break;
             case 4:
+                MenuNewsOptionsSubmenus.f1News(title, writer);
                 break;
             case 5:
+                MenuNewsOptionsSubmenus.motoNews(title, writer);
                 break;
         }
     }

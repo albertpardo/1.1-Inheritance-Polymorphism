@@ -181,9 +181,77 @@ public class MenuNewsOptionsSubmenus {
                     player = MenuUtils.inputStringByCli("Player name?");
                 break;
         }
-
         tennisNews = new Tennisnews(title, player);
         writer.addNews(tennisNews);
+    }
 
+    public static void f1News(String title, Writer writer) {
+        F1news f1news;
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        int option = 0;
+        String stable = "";
+
+        System.out.println("F1News questions:");
+        System.out.println("Select Race Car Stable:");
+        option = 0;
+        while (option == 0){
+            System.out.println("1.- " + ConstatsKeysNews.TEAM_FERRARI);
+            System.out.println("2.- " + ConstatsKeysNews.TEAM_MERCEDES);
+            System.out.println("3.- Other Race Car Stable (must be put):");
+            input = scanner.nextLine();
+            if (input.matches("[1-3]"))
+                option = Integer.parseInt(input);
+            else
+                System.out.println("\nBad option!!");
+        }
+        switch (option) {
+            case 1:
+                stable = ConstatsKeysNews.TEAM_FERRARI;
+                break;
+            case 2:
+                stable = ConstatsKeysNews.TEAM_MERCEDES;
+                break;
+            case 3:
+                stable = MenuUtils.inputStringByCli("Race Car Stable name?");
+                break;
+        }
+        f1news = new F1news(title, stable);
+        writer.addNews(f1news);
+    }
+
+    public static void motoNews(String title, Writer writer) {
+        MotoNews motoNews;
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        int option = 0;
+        String stable = "";
+
+        System.out.println("motocycleNews questions:");
+        System.out.println("Select Motocycle Stable:");
+        option = 0;
+        while (option == 0){
+            System.out.println("1.- " + ConstatsKeysNews.TEAM_HONDA);
+            System.out.println("2.- " + ConstatsKeysNews.TEAM_YAMAHA);
+            System.out.println("3.- Other Motocycle Stable (must be put):");
+            input = scanner.nextLine();
+            if (input.matches("[1-3]"))
+                option = Integer.parseInt(input);
+            else
+                System.out.println("\nBad option!!");
+        }
+        switch (option) {
+            case 1:
+                stable = ConstatsKeysNews.TEAM_HONDA;
+                break;
+            case 2:
+                stable = ConstatsKeysNews.TEAM_YAMAHA;
+                break;
+            case 3:
+                stable = MenuUtils.inputStringByCli("Motocycle Stable name?");
+                break;
+        }
+        motoNews = new MotoNews(title, stable);
+        writer.addNews(motoNews);
     }
 }
