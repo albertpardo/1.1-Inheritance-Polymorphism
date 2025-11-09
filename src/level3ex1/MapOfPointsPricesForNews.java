@@ -14,7 +14,7 @@ public class MapOfPointsPricesForNews {
         mapOfPointsPricesForNews.put(ConstatsKeysNews.PLAYER_FER, new PointsPricesForNews(50, 1));
         mapOfPointsPricesForNews.put(ConstatsKeysNews.PLAYER_BEN, new PointsPricesForNews(50, 1));
 
-        mapOfPointsPricesForNews.put(ConstatsKeysNews.BASKET_LEAGUE_EURO, new PointsPricesForNews(75 ,5));
+        mapOfPointsPricesForNews.put(ConstatsKeysNews.BASKET_LEAGUE_EURO, new PointsPricesForNews(75 ,3));
         mapOfPointsPricesForNews.put(ConstatsKeysNews.BASKET_LEAGUE_ACB, new PointsPricesForNews(0, 2));
         mapOfPointsPricesForNews.put(ConstatsKeysNews.CLUB_BASKET_BCN, new PointsPricesForNews(75,1));
         mapOfPointsPricesForNews.put(ConstatsKeysNews.CLUB_BASKET_MAD, new PointsPricesForNews(75, 1));

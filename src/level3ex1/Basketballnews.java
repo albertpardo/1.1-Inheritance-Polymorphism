@@ -14,11 +14,30 @@ public class Basketballnews extends News {
 
     @Override
     public void calculatePrice(MapOfPointsPricesForNews pointsPricesNewsMap) {
-        //Todo
+        double total;
+        double competitionPrice;
+        double clubPrice;
+
+        competitionPrice = pointsPricesNewsMap.getPriceByKey(competition);
+        clubPrice = pointsPricesNewsMap.getPriceByKey(club);
+        total = START_PRICE + competitionPrice + clubPrice;
+        System.out.println("Price for \"" + super.getTitle() + "\" -> "  + total + "€.");
     }
 
     @Override
     public void calculateScore(MapOfPointsPricesForNews pointsPricesNewsMap) {
-        //Todo
+        double total;
+        double competitionScore;
+        double clubScore;
+
+        competitionScore = pointsPricesNewsMap.getPointsByKey(competition);
+        clubScore = pointsPricesNewsMap.getPointsByKey(club);
+        total = START_SCORE + competitionScore + clubScore;
+        System.out.println("Score for \"" + super.getTitle() + "\" -> "  + total + " Points.");
+    }
+
+    @Override
+    public String toString() {
+        return ("Title : " + super.getTitle() + ", Start Score : " + super.getScore() + ", Start Price : " + super.getPrice() + ", Competition: " + competition + ", Club : " + club);
     }
 }
