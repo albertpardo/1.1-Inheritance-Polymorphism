@@ -1,7 +1,6 @@
 package level3ex1;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuNewsOptionsSubmenus {
@@ -87,5 +86,63 @@ public class MenuNewsOptionsSubmenus {
         }
         footballnews = new Footballnews(title, competition, club, player);
         writer.addNews(footballnews);
+    }
+
+    public static void basketballNews(String title, Writer writer){
+        Basketballnews basketballnews;
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        int option = 0;
+        String competition = "";
+        String club = "";
+
+        System.out.println("BasketballNews questions:");
+        while (option == 0){
+            System.out.println("Select competition:");
+            System.out.println("1.- " + ConstatsKeysNews.BASKET_LEAGUE_EURO);
+            System.out.println("2.- " + ConstatsKeysNews.BASKET_LEAGUE_ACB);
+            System.out.println("3.- Other league (must be put):");
+            input = scanner.nextLine();
+            if (input.matches("[1-3]"))
+                option = Integer.parseInt(input);
+            else
+                System.out.println("\nBad option!!");
+        }
+        switch (option) {
+            case 1:
+                competition = ConstatsKeysNews.BASKET_LEAGUE_EURO;
+                break;
+            case 2:
+                competition = ConstatsKeysNews.BASKET_LEAGUE_ACB;
+                break;
+            case 3:
+                competition = MenuUtils.inputStringByCli("Competition name?");
+                break;
+        }
+        System.out.println("Select Club:");
+        option = 0;
+        while (option == 0){
+            System.out.println("1.- " + ConstatsKeysNews.CLUB_BASKET_BCN);
+            System.out.println("2.- " + ConstatsKeysNews.CLUB_BASKET_MAD);
+            System.out.println("3.- Other club (must be put):");
+            input = scanner.nextLine();
+            if (input.matches("[1-3]"))
+                option = Integer.parseInt(input);
+            else
+                System.out.println("\nBad option!!");
+        }
+        switch (option) {
+            case 1:
+                club = ConstatsKeysNews.CLUB_BASKET_BCN;
+                break;
+            case 2:
+                club = ConstatsKeysNews.CLUB_BASKET_MAD;
+                break;
+            case 3:
+                club = MenuUtils.inputStringByCli("Club name?");
+                break;
+        }
+        basketballnews = new Basketballnews(title, competition, club);
+        writer.addNews(basketballnews);
     }
 }

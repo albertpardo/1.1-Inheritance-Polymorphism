@@ -56,7 +56,8 @@ public class MenuNews {
 
         printMenuNews();
         option = getOption();
-        executeOption(option, writer);
+        if (option > 0)
+            executeOption(option, writer);
         System.out.println();
     }
 }

@@ -41,8 +41,10 @@ public class MenuUtils {
                 if (writerId < writers.size()) {
                     writer = writers.get(writerId);
                     System.out.println("-> Selected writer name :" + writer.getName());
-                } else
+                } else {
                     System.out.println("\nNo valid Id!!!");
+                    writerId = -1;
+                }
             } else
                 System.out.println("\nInput Error!!!");
         }
