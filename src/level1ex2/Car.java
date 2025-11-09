@@ -7,7 +7,7 @@ public class Car {
 
 
     public Car(int power){
-    //    Car.model = "DefaultModel";
+        Car.model = "DefaultModel";
         this.power = power;
     }
 
