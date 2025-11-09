@@ -76,7 +76,8 @@ public class MenuUtils {
             }
             System.out.println("\nNo valid Id!!!");
         }
-
+        else
+            System.out.println("\nNo News assigned. Please assign mews to this writer!");
         return newsId;
     }
 }

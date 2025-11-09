@@ -5,18 +5,18 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class MenuMainOptionsMethods {
-    private void printWritersInfo(ArrayList<Writer> writers){
+    private void printWritersInfo(ArrayList<Writer> writers) {
         System.out.println("\n Writers Info: ");
         Iterator<Writer> it = writers.iterator();
         while (it.hasNext())
             System.out.println("- " + it.next().toString());
     }
 
-    private void printWritersName(ArrayList<Writer> writers){
+    private void printWritersName(ArrayList<Writer> writers) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Writers Names List: ");
-        for (int i = 0; i < writers.size(); i++){
+        for (int i = 0; i < writers.size(); i++) {
             System.out.println(" - Id:" + i + "\tNAME: " + writers.get(i).getName());
         }
     }
@@ -87,7 +87,7 @@ public class MenuMainOptionsMethods {
         int writerId;
 
         writerId = MenuUtils.selectWriterIdByCli(writers);
-        if (writerId > -1){
+        if (writerId > -1) {
             String name;
 
             name = writers.get(writerId).getName();
@@ -177,7 +177,7 @@ public class MenuMainOptionsMethods {
         Writer writer;
 
         writerId = MenuUtils.selectWriterIdByCli(writers);
-        if (writerId > -1){
+        if (writerId > -1) {
             writer = writers.get(writerId);
             newsId = MenuUtils.selectNewsIdByCli(writer);
             if (newsId > -1) {
@@ -217,7 +217,7 @@ public class MenuMainOptionsMethods {
         Writer writer;
 
         writerId = MenuUtils.selectWriterIdByCli(writers);
-        if (writerId > -1){
+        if (writerId > -1) {
             writer = writers.get(writerId);
             writer.printAssignedNews();
         }
@@ -225,6 +225,7 @@ public class MenuMainOptionsMethods {
 
     public void calculateScoreNews(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
 
+        /*
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
@@ -262,9 +263,24 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
+
+         */
+
+        int writerId;
+        int newsId;
+        Writer writer;
+
+        writerId = MenuUtils.selectWriterIdByCli(writers);
+        if (writerId > -1) {
+            writer = writers.get(writerId);
+            newsId = MenuUtils.selectNewsIdByCli(writer);
+            if (newsId > -1)
+                writer.getAssignedNewsById(newsId).calculateScore(pointsPricesNewsMap);
+        }
     }
 
     public void calculateNewsPrice(ArrayList<Writer> writers, MapOfPointsPricesForNews pointsPricesNewsMap) {
+        /*
         Writer writer;
         String input1, input2;
         Scanner scanner = new Scanner(System.in);
@@ -302,6 +318,18 @@ public class MenuMainOptionsMethods {
         }
         else
             System.out.println("\nInput Error!!!");
-    }
+*/
 
+        int writerId;
+        int newsId;
+        Writer writer;
+
+        writerId = MenuUtils.selectWriterIdByCli(writers);
+        if (writerId > -1) {
+            writer = writers.get(writerId);
+            newsId = MenuUtils.selectNewsIdByCli(writer);
+            if (newsId > -1)
+                writer.getAssignedNewsById(newsId).calculatePrice(pointsPricesNewsMap);
+        }
+    }
 }
