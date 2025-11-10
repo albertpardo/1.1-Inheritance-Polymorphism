@@ -4,6 +4,8 @@ public abstract class Instrument {
     private String name;
     private double price;
 
+    public static final String INSTRUMENT = "instrument";
+
     static {
         System.out.println("Abstact Instrument class is called.");
     }

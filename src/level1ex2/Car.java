@@ -1,7 +1,7 @@
 package level1ex2;
 
 public class Car {
-    private static final String brand = "DefaultBrand";
+    private static final String BRAND = "DefaultBrand";
     private static String model;
     private final int power;
 
@@ -25,6 +25,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Brand = " + brand + ", Model = " + model + ", Power=" + power;
+        return "Brand = " + BRAND + ", Model = " + model + ", Power=" + power;
     }
 }

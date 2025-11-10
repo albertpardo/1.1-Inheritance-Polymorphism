@@ -1,12 +1,14 @@
 package level3ex1;
 
 public class Tennisnews extends News{
+    private String competition;
     private String player;
     private static final double START_PRICE = 150.0;
     private static final double START_SCORE = 4.0;
 
-    public Tennisnews(String title, String player) {
+    public Tennisnews(String title, String competition, String player) {
         super(title, START_SCORE, START_PRICE);
+        this.competition = competition;
         this.player = player;
     }
 
@@ -32,6 +34,6 @@ public class Tennisnews extends News{
 
     @Override
     public String toString() {
-        return ("Title : " + super.getTitle() + ", Start Score : " + super.getScore() + ", Start Price : " + super.getPrice() + ", Player: " + player);
+        return ("Title : " + super.getTitle() + ", Start Score : " + super.getScore() + ", Start Price : " + super.getPrice() + ", Competition: " + competition + ", Player: " + player);
     }
 }

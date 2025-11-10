@@ -1,11 +1,10 @@
 package level3ex1;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class MenuNewsOptionsSubmenus {
 
-    public static void footballNews(String title, Writer writer){
+    public static void fillOutFootballNews(String title, Writer writer){
         Footballnews footballnews;
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -88,7 +87,7 @@ public class MenuNewsOptionsSubmenus {
         writer.addNews(footballnews);
     }
 
-    public static void basketballNews(String title, Writer writer){
+    public static void fillOutBasketballNews(String title, Writer writer){
         Basketballnews basketballnews;
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -146,14 +145,16 @@ public class MenuNewsOptionsSubmenus {
         writer.addNews(basketballnews);
     }
 
-    public static void tennisNews(String title, Writer writer){
+    public static void fillOutTennisNews(String title, Writer writer){
         Tennisnews tennisNews;
         Scanner scanner = new Scanner(System.in);
         String input;
         int option = 0;
+        String competition;
         String player = "";
 
         System.out.println("TennisNews questions:");
+        competition = MenuUtils.inputStringByCli("Competiton ? ");
         System.out.println("Select player:");
         option = 0;
         while (option == 0){
@@ -181,11 +182,11 @@ public class MenuNewsOptionsSubmenus {
                     player = MenuUtils.inputStringByCli("Player name?");
                 break;
         }
-        tennisNews = new Tennisnews(title, player);
+        tennisNews = new Tennisnews(title, competition, player  );
         writer.addNews(tennisNews);
     }
 
-    public static void f1News(String title, Writer writer) {
+    public static void fillOutF1News(String title, Writer writer) {
         F1news f1news;
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -220,7 +221,7 @@ public class MenuNewsOptionsSubmenus {
         writer.addNews(f1news);
     }
 
-    public static void motoNews(String title, Writer writer) {
+    public static void fillOutMotoNews(String title, Writer writer) {
         MotoNews motoNews;
         Scanner scanner = new Scanner(System.in);
         String input;

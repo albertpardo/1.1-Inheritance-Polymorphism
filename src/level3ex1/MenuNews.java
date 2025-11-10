@@ -1,6 +1,5 @@
 package level3ex1;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuNews {
@@ -36,19 +35,19 @@ public class MenuNews {
         title = MenuUtils.inputStringByCli("News title? ");
         switch (option) {
             case 1:
-                MenuNewsOptionsSubmenus.footballNews(title,writer);
+                MenuNewsOptionsSubmenus.fillOutFootballNews(title,writer);
                 break;
             case 2:
-                MenuNewsOptionsSubmenus.basketballNews(title, writer);
+                MenuNewsOptionsSubmenus.fillOutBasketballNews(title, writer);
                 break;
             case 3:
-                MenuNewsOptionsSubmenus.tennisNews(title, writer);
+                MenuNewsOptionsSubmenus.fillOutTennisNews(title, writer);
                 break;
             case 4:
-                MenuNewsOptionsSubmenus.f1News(title, writer);
+                MenuNewsOptionsSubmenus.fillOutF1News(title, writer);
                 break;
             case 5:
-                MenuNewsOptionsSubmenus.motoNews(title, writer);
+                MenuNewsOptionsSubmenus.fillOutMotoNews(title, writer);
                 break;
         }
     }

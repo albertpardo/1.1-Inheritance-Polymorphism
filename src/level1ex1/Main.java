@@ -2,6 +2,11 @@ package level1ex1;
 
 public class Main {
     public static void main(String[] args){
+        System.out.println(" --- calling static vars in class (The class is not load in memory ---");
+        System.out.println( "Acces to Public Static Var in Instrument : " + Instrument.INSTRUMENT);
+        System.out.println( "Acces to Public Static Var in PercussionInstrument : " + PercussionInstrument.PERCUSSION_INSTRUMENT);
+
+        System.out.println("\n --- Creating objects ---");
         PercussionInstrument bongo = new PercussionInstrument("Bongo", 1000.0);
         bongo.play();
         System.out.println();

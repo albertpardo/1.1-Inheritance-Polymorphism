@@ -18,8 +18,10 @@ public class Main {
         model = "Model_A";
         System.out.println("\ncar1 change the model to :" + model);
         car1.setModel(model);
+        System.out.println("\n Now car1 and car2 has the same model:");
         infocar("car1", car1);
         infocar("car2", car2);
+
 
         Car.stop();
     }
